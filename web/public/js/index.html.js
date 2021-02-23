@@ -19,6 +19,7 @@ var sysStat,
     CONNECT: 'connect',
     CONNECT_ERROR: 'connect_error',
     DATA: 'data',
+    DATA_USAGE: 'data.usage',
     DATA_PROCESSES: 'data.processes',
     DATA_SYSTEM_STATS: 'data.sysstat',
     DATA_PM2_VERSION: 'data.pm2version',
@@ -1073,7 +1074,7 @@ function monitorProc() {
   if (!sockets.proc) {
     sockets.proc = connectSocketServer(NSP.PROCESS);
     sockets.proc.on(SOCKET_EVENTS.ERROR, appendData);
-    sockets.proc.on(SOCKET_EVENTS.DATA, appendData);
+    sockets.proc.on(SOCKET_EVENTS.DATA_USAGE, appendData);
     sockets.proc.on(SOCKET_EVENTS.CONNECT, function() {
       sockets.proc.emit(SOCKET_EVENTS.PULL_USAGE, popupProc.pid);
     });
