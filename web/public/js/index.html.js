@@ -1023,7 +1023,7 @@ function tailLogs() {
  */
 function appendLogs(log) {
   // Check process and pm_id should be equalled.
-  if (!popupProc || popupProc.pm_id != log.pm_id) {
+  if (!popupProc || popupProc.pm_id != log.id) {
     return;
   }
 
