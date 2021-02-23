@@ -1042,7 +1042,7 @@ function appendLogs(log) {
     !scrolled && (scrolled = poffset < offset - 30);
     scrollable = true;
   }
-  $(log.text || log.error).appendTo(lo);
+  $(`<p>${log.text || log.error}</p>`).appendTo(lo);
 
   if (scrollable) {
     lo.parent().slimScroll({
