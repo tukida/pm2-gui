@@ -23,6 +23,7 @@ var sysStat,
     DATA_SYSTEM_STATS: 'data.sysstat',
     DATA_PM2_VERSION: 'data.pm2version',
     DATA_ACTION: 'data.action',
+    PULL_USAGE: 'pull.usage',
     PULL_LOGS: 'pull.log',
     PULL_PROCESS: 'pull.processes',
     PULL_ACTION: 'pull.action'
@@ -1074,7 +1075,7 @@ function monitorProc() {
     sockets.proc.on(SOCKET_EVENTS.ERROR, appendData);
     sockets.proc.on(SOCKET_EVENTS.DATA, appendData);
     sockets.proc.on(SOCKET_EVENTS.CONNECT, function() {
-      sockets.proc.emit(SOCKET_EVENTS.PULL_PROCESS, popupProc.pid);
+      sockets.proc.emit(SOCKET_EVENTS.PULL_USAGE, popupProc.pid);
     });
   } else {
     sockets.proc.connect();
