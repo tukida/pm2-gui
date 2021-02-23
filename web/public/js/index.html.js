@@ -24,7 +24,7 @@ var sysStat,
     DATA_PM2_VERSION: 'data.pm2version',
     DATA_ACTION: 'data.action',
     PULL_LOGS: 'pull.log',
-    PULL_PROCESS: 'pull.process',
+    PULL_PROCESS: 'pull.processes',
     PULL_ACTION: 'pull.action'
   },
   timer,
