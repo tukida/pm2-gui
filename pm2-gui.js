@@ -76,7 +76,7 @@ function startWebServer (confFile) {
     // path: '/monitor/socket.io'
   })
   monitor.run()
-  console.info('Web server is listening on 127.0.0.1:' + options.port)
+  console.info('... Web server is listening on 127.0.0.1:' + options.port)
 }
 
 /**
