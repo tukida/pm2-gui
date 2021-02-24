@@ -138,7 +138,8 @@ function connectSocketServer(ns) {
 
   var socket = io.connect(uri, {
     forceNew: true,
-    timeout: 3000
+    timeout: 3000,
+    path: '/monitor'
   });
   socket.on(SOCKET_EVENTS.ERROR, onError);
   socket.on(SOCKET_EVENTS.CONNECT_ERROR, onError);

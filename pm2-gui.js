@@ -96,7 +96,8 @@ function startAgent (confFile) {
   // socket.io server
   var sockio = socketIO()
   sockio.listen(options.port, {
-    origins: options.origins || '*:*'
+    origins: options.origins || '*:*',
+    path: '/monitor'
   })
   monitor.sockio = sockio
   monitor.run()
