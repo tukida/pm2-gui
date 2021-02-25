@@ -72,11 +72,10 @@ function startWebServer (confFile) {
   })
   // socket.io server
   monitor.sockio = socketIO(server, {
-    origins: options.origins || '*:*',
-    path: '/monitor/socket.io'
+    origins: options.origins || '*:*'
   })
   monitor.run()
-  console.info('... Web server is listening on 127.0.0.1:' + options.port)
+  console.info('Web server is listening on 127.0.0.1:' + options.port)
 }
 
 /**
@@ -95,9 +94,7 @@ function startAgent (confFile) {
     return process.exit(0)
   }
   // socket.io server
-  var sockio = socketIO({
-    path: '/monitor/socket.io'
-  })
+  var sockio = socketIO()
   sockio.listen(options.port, {
     origins: options.origins || '*:*'
   })
@@ -265,9 +262,7 @@ function _connectToDashboard (monitor, options, connection) {
         console.warn('Fatal to connect to monitor:', err.message)
         console.warn('Agent is offline, try to start it:', '127.0.0.1:' + connection.port)
         // start socket.io server.
-        var sockio = socketIO({
-          path: '/monitor/socket.io'
-        })
+        var sockio = socketIO()
         sockio.listen(connection.port, {
           origins: options.origins || '*:*'
         })
