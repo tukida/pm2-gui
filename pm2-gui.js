@@ -266,7 +266,7 @@ function _connectToDashboard (monitor, options, connection) {
         console.warn('Agent is offline, try to start it:', '127.0.0.1:' + connection.port)
         // start socket.io server.
         var sockio = socketIO({
-          // resource: '/monitor/socket.io'
+          path: '/monitor/socket.io'
         })
         sockio.listen(connection.port, {
           origins: options.origins || '*:*'
