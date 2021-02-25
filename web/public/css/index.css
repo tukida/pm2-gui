@@ -12,7 +12,7 @@ body {
 }
 
 .load {
-  background: url(/img/ajax-loading.gif) no-repeat center center;
+  background: url(img/ajax-loading.gif) no-repeat center center;
   width: 20px;
   height: 20px;
   display: block;
@@ -549,7 +549,7 @@ END OF REPO && VER
 }
 
 #popup .load {
-  background-image: url(/img/ajax-loading-invert.gif);
+  background-image: url(img/ajax-loading-invert.gif);
   position: absolute;
   left: 50%;
   top: 50%;
