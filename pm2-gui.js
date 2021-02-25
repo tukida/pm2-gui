@@ -73,7 +73,7 @@ function startWebServer (confFile) {
   // socket.io server
   monitor.sockio = socketIO(server, {
     origins: options.origins || '*:*',
-    // path: '/monitor/socket.io'
+    path: '/monitor/socket.io'
   })
   monitor.run()
   console.info('... Web server is listening on 127.0.0.1:' + options.port)
